@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ex4.css" />
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <div class="one"><li>je</li></div>
+        <div class="two"><li>t'aime</li></div>
+        <div class="three"><li>toi</li></div>
+    </ol>
+    <script>
+        function couleurAleatoire() {
+            return "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+        const elements = document.querySelectorAll(".one, .two, .three");
+        elements.forEach(el => {
+            el.addEventListener("click", function() {
+                this.style.color = couleurAleatoire(); 
+            });
+        });
+    </script>
+</body>
+</html>

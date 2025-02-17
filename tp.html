@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var n;
+        var niveau;
+        do {
+            niveau = prompt("Choisir entre facile | intermédiaire | difficile");
+        } while (niveau != "facile" && niveau != "intermédiaire" && niveau != "difficile");
+        var inter = Math.random()*99+1; 
+            if (niveau == "facile" ) n=10;
+            else if (niveau == "intermédiaire") n=5;
+            else n=3;  
+        alert(n);
+        alert(inter);
+        function play(niveau,c){
+            let i=0;
+            let a;
+            a=prompt("donner a");
+            while(n>i && c != a ){
+                i++;
+                if (c<a)
+                alert("false try smaller number");
+                if (c>a)
+                alert("false try bigger number");
+                a=prompt("donner a");
+            }
+            if (c == a){
+                alert("good job");
+            }
+            else if(c!=a){
+                alert("hard luck");
+            }
+        }
+        play(n,inter);
+        
+    </script>
+</body>
+</html>

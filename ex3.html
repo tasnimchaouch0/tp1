@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ex3.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="zoneTexte"></div>
+        <div class="b1">
+            <label>Name:</label>
+            <input type="text" id="t1" placeholder="Tapez votre nom ici">
+            <label>Content:</label>
+            <input type="text" id="t2" placeholder="Tapez votre contenu ici">
+            <button onclick="ajouterTexte()">ADD TODO</button>
+        </div>
+    </div>
+
+    <script>
+        function ajouterTexte() {
+            const inputName =document.getElementById("t1");
+            const inputContent =document.getElementById("t2");
+            const zoneTexte =document.getElementById("zoneTexte");
+
+            if (inputName.value.trim() != "" && inputContent.value.trim() != "") {
+                const nouveauTexte = document.createElement("div");
+                nouveauTexte.classList.add("texte-ajoute");
+                const texte = document.createElement("span");
+                texte.innerHTML = `${inputName.value}: ${inputContent.value}`;
+                const deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "🗑️";
+                deleteBtn.classList.add("delete-btn");
+                deleteBtn.onclick = function () {
+                    zoneTexte.removeChild(nouveauTexte);
+                };
+                nouveauTexte.appendChild(texte);
+                nouveauTexte.appendChild(deleteBtn);
+                zoneTexte.appendChild(nouveauTexte);
+                inputName.value = "";
+                inputContent.value = "";
+            } else {
+                alert("Veuillez remplir les deux champs !");
+            }
+        }
+    </script>
+</body>
+</html>
