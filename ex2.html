@@ -1,36 +1,35 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="ex2.css" />
     <title>Document</title>
-</head>
-<body>
-    <div class="text">
-        test
-    </div>
-    <input type="color", id="color-picker", value="16">
-    <input type="number", id ="number-picker">
-    <select id="font" > 
-<option value="arial">arial</option>
-<option value="Verdana">Verdana</option>
-<option value="Garamond">Garamond</option>
+  </head>
+  <body>
+    <div class="text">test</div>
+    <input type="color" , id="color-picker" , value="16" />
+    <input type="number" , id="number-picker" />
+    <select id="font">
+      <option value="arial">arial</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Garamond">Garamond</option>
     </select>
     <script>
-        const color = document.getElementById('color-picker');
-        const number = document.getElementById('number-picker');
-        const font = document.getElementById('font');
-        const text= document.querySelector('.text');
-        number.addEventListener('input', function(){
-            text.style.fontSize = number.value+'px' ;});
-        color.addEventListener('input', function(){
-            text.style.color= color.value;});
-        font.addEventListener('change', function(){
-            text.style.fontFamily=font.value;
-        });
-
-
+      const color = document.getElementById("color-picker");
+      const number = document.getElementById("number-picker");
+      const font = document.getElementById("font");
+      const text = document.querySelector(".text");
+      number.addEventListener("input", function () {
+        text.style.fontSize = number.value + "px";
+      });
+      color.addEventListener("input", function () {
+        text.style.color = color.value;
+      });
+      font.addEventListener("change", function () {
+        text.style.fontFamily = font.value;
+      });
     </script>
-</body>
+  </body>
 </html>
